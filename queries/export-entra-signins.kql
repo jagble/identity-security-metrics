@@ -1,0 +1,10 @@
+// Export real Entra ID sign-ins from Log Analytics (the workspace from Project 2) for notebook 02.
+// Run in Log Analytics → Logs, then Export → CSV (all columns). Save as entra_signins_export.csv
+// and upload it to the raw volume. READ-ONLY.
+// Keep this file OUT of the repo and out of Tableau Public: it contains real usernames and IP addresses.
+SigninLogs
+| where TimeGenerated > ago(30d)
+| project TimeGenerated, CorrelationId, UserPrincipalName, AppDisplayName, ClientAppUsed, IPAddress,
+          City = tostring(LocationDetails.city), CountryOrRegion = tostring(LocationDetails.countryOrRegion),
+          ResultType, AuthenticationRequirement, RiskLevelDuringSignIn, ConditionalAccessStatus
+| order by TimeGenerated asc
