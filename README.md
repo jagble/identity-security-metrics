@@ -1,6 +1,5 @@
 # Identity Security Metrics: Databricks, Machine Learning and Dashboards
 
-**Status: 🔨 In progress.** The design, data generator and Databricks notebooks are written and tested locally. The run in Databricks, the dashboards and the results come next, and get added here as they're done.
 
 Identity security metrics for **Potomac Defense Systems (PDS)**, the fictional defense contractor from my IAM portfolio. HR records, MFA registrations and sign-in logs go into **Databricks**, through a bronze → silver → gold pipeline, and come out as **metrics that matter**, detections for suspicious sign-ins (rules versus **machine learning**), dashboards in **Databricks and Tableau**, and a one-page executive briefing.
 
